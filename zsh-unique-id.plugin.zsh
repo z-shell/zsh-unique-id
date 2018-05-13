@@ -44,11 +44,10 @@ fi
     ZUID_CONFIG[use_zsystem_flock]="$use_zsystem_flock"
 
     local -a codenames
-    zstyle -a ":plugin:zuid" codenames codenames || codenames=( echelon quantum ion proxima polaris solar momentum
-                                                                hyper gloom velocity future enigma andromeda saturn
-                                                                jupiter aslan commodore falcon persepolis dharma
-                                                                samsara prodigy ethereal epiphany
-                                                                aurora oblivion )
+    zstyle -a ":plugin:zuid" codenames codenames || codenames=( atlantis echelon quantum ion proxima polaris solar
+                                                                momentum hyper gloom velocity future enigma andromeda
+                                                                saturn jupiter aslan commodore falcon persepolis dharma
+                                                                samsara prodigy ethereal epiphany aurora oblivion )
     ZUID_CONFIG[codenames]="${(j,:,)codenames}"
 }
 

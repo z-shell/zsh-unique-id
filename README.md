@@ -10,9 +10,10 @@ that two different Zshells will not write to the same file.
 
 Default codenames are:
 
- - echelon (for `ZUID_ID` == `1`)
- - quantum (for `ZUID_ID` == `2`)
- - ion (etc.)
+ - atlantis (for `ZUID_ID` == `1`)
+ - echelon (for `ZUID_ID` == `2`)
+ - quantum (etc.)
+ - ion
  - proxima
  - polaris
  - solar
