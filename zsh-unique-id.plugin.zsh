@@ -90,12 +90,12 @@ fi
     if [[ "$ZUID_FD" = <-> && "$ZUID_FD" != "0" && "$ZUID_ID" = <-> && "$ZUID_ID" != "0" ]]; then
         # Inherited FD and ID, no need to perform work
         if print -u "$ZUID_FD" -n 2>/dev/null; then
-            idx=101
+            idx=51
         fi
     fi
 
     # Supported are 50 shells - acquire takes ~200ms max (zsystem's flock)
-    for (( ; idx <= 100; idx ++ )); do
+    for (( ; idx <= 50; idx ++ )); do
         # First (at first loop) try with $ZUID_ID (the case of inherited ID)
         [[ "$idx" = "0" && "$ZUID_ID" = <-> ]] && try_id="$ZUID_ID" || try_id="$idx"
         [[ "$try_id" = "0" ]] && continue
