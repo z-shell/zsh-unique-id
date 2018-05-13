@@ -1,12 +1,22 @@
 # zsh-unique-id
 
-This plugin will provide **unique** number that will identify Zshell session.
-Besides unique number, also a unique codename will be provided. Exported parameters
-`$ZUID_ID` and `$ZUID_CODENAME` hold those values. The numeric identification will
-be a progressing number starting from `1`.
+#### Commit count
+Don't worry about **low commit count**, this project is a derivative of
+[zdharma/zconvey](https://github.com/zdharma/zconvey), which has ~190 commits and
+has been maintained and used for 1.5 years now.
+
+### Introduction
+This plugin provides a **unique number** that identifies a **running**
+Zshell session, in its shell variable `$ZUID_ID`. Besides this unique number,
+also a unique *codename* is provided, in shell variable `$ZUID_CODENAME`. Once
+you load this plugin, the two parameters will be set, and their values will not
+be available to other Zshell sessions (being thus *unique*).
+
+`$ZUID_ID` is a progressing number starting from `1`. `$ZUID_CODENAME` is chosen
+from a list of predefined codenames, see the default list below.
 
 An example use case is to hold logs in files `.../mylog-${ZUID_CODENAME}.log`, so
-that two different Zshells will not write to the same file.
+that two different Zshells will not write to the same file at the same time.
 
 Default codenames are:
 
