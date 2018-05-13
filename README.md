@@ -37,6 +37,12 @@ Default codenames are:
  - aurora
  - oblivion
 
+Zstyle configuration allows to customize the codenames:
+
+```zsh
+zstyle :plugin:zuid codenames paper metal wood plastic # first 4 shells will have those codenames
+```
+
 # Installation
 
 **The plugin is "standalone"**, which means that only sourcing it is needed (without
