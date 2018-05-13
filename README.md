@@ -2,7 +2,8 @@
 
 This plugin will provide **unique** number that will identify Zshell session.
 Besides unique number, also a unique codename will be provided. Exported parameters
-`$ZUID_ID` and `$ZUID_CODENAME` hold those values.
+`$ZUID_ID` and `$ZUID_CODENAME` hold those values. The numeric identification will
+be a progressing number starting from `1`.
 
 An example use case is to hold logs in files `.../mylog-${ZUID_CODENAME}.log`, so
 that two different Zshells will not write to the same file.
