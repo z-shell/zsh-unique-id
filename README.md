@@ -39,8 +39,8 @@ Default codenames are:
 
 # Installation
 
-**The plugin is "standalone"**, which means that only sourcing it is needed. So to
-install, unpack `zsh-unique-id` somewhere and add:
+**The plugin is "standalone"**, which means that only sourcing it is needed (without
+using a plugin manager). So to install, unpack `zsh-unique-id` somewhere and add:
 
 ```zsh
 source {where-zsh-unique-id-is}/zsh-unique-id.plugin.zsh
