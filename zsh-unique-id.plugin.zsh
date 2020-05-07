@@ -18,8 +18,7 @@ typeset -gx ZUID_CODENAME
 # flock in Zsh ver. < 5.3 doesn't) - util-linux/flock stripped
 # of some things, compiles hopefully everywhere (tested on OS X,
 # Linux, FreeBSD).
-if [[ ! -e "${ZERO:h}/myflock/flock" ]]; then
-    (
+if [[ ! -e "${ZERO:h}/myflock/flock" && ! -e "${ZERO:h}/myflock/flock".exe   ]]; then (
         if zmodload zsh/system 2>/dev/null; then
             if zsystem flock -t 1 "${ZERO:h}/myflock/LICENSE"; then
                 echo "\033[1;35m""zdharma\033[0m/\033[1;33m""zsh-unique-id\033[0m is building small locking command for you..."
