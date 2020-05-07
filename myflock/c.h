@@ -209,8 +209,10 @@ static inline __attribute__((const)) int is_power_of_2(unsigned long num)
 	return (num != 0 && ((num & (num - 1)) == 0));
 }
 
-#ifndef HAVE_LOFF_T
+#ifndef HAVE_LOFF_T 
+#ifndef __CYGWIN__
 typedef int64_t loff_t;
+#endif
 #endif
 
 #if !defined(HAVE_DIRFD) && (!defined(HAVE_DECL_DIRFD) || HAVE_DECL_DIRFD == 0) && defined(HAVE_DIR_DD_FD)
