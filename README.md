@@ -1,11 +1,11 @@
-# zsh-unique-id
+# `ZSH-UNIQUE-ID`
 
-#### Commit count
-Don't worry about **low commit count**, this project is a derivative of
-[z-shell/zconvey](https://github.com/z-shell/zconvey), which has ~190 commits and
-has been maintained and used for 1.5 years now.
+[![CodeFactor](https://www.codefactor.io/repository/github/z-shell/zsh-unique-id/badge)](https://www.codefactor.io/repository/github/z-shell/zsh-unique-id)
 
-### Introduction
+---
+> Note: this project is a derivative of [z-shell/zconvey](https://github.com/z-shell/zconvey)
+
+## Introduction
 This plugin provides a **unique number** that identifies a **running**
 Zshell session, in its shell variable `$ZUID_ID`. Besides this unique number,
 also a unique *codename* is provided, in shell variable `$ZUID_CODENAME`. Once
@@ -54,7 +54,7 @@ Zstyle configuration allows to customize the codenames:
 zstyle :plugin:zuid codenames paper metal wood plastic # first 4 shells will have those codenames
 ```
 
-# Installation
+## Installation
 
 **The plugin is "standalone"**, which means that only sourcing it is needed (without
 using a plugin manager). So to install, unpack `zsh-unique-id` somewhere and add:
@@ -68,23 +68,23 @@ to `zshrc`.
 Sourcing is recommended, because it can be done early, at top of zshrc, without a
 plugin manager – to acquire the unique identification as early as possible.
 
-## [Zinit](https://github.com/z-shell/zinit)
+### [Zinit](https://github.com/z-shell/zinit)
 
 Add `zinit load z-shell/zsh-unique-id` to your `.zshrc` file. Zplugin will clone the plugin
  the next time you start zsh. To update issue `zplugin update z-shell/zsh-unique-id`.
 
-## Antigen
+### Antigen
 
 Add `antigen bundle z-shell/zsh-unique-id` to your `.zshrc` file. Antigen will handle
 cloning the plugin for you automatically the next time you start zsh.
 
-## Oh-My-Zsh
+### Oh-My-Zsh
 
 1. `cd ~/.oh-my-zsh/custom/plugins`
 2. `git clone git@github.com:z-shell/zsh-unique-id.git`
 3. Add `zsh-unique-id` to your plugin list
 
-## Zgen
+### Zgen
 
 Add `zgen load z-shell/zsh-unique-id` to your .zshrc file in the same place you're doing
 your other `zgen load` calls in.
