@@ -1,3 +1,5 @@
+# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
+#
 # Standardized $0 Handling
 # https://z.digitalclouds.dev/community/zsh_plugin_standard#zero-handling
 0="${ZERO:-${${0:#$ZSH_ARGZERO}:-${(%):-%N}}}"
@@ -158,3 +160,5 @@ function __zuid_zshexit() {
 
 autoload -Uz add-zsh-hook
 add-zsh-hook zshexit __zuid_zshexit
+
+# vim: ft=zsh sw=2 ts=2 et
