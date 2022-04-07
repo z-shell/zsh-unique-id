@@ -1,7 +1,7 @@
-# Set up $0 according to the standard:
-# https://github.com/z-shell/zi/wiki/Zsh-Plugin-Standard
-0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
-local ZERO="$0"
+# Standardized $0 Handling
+# https://z.digitalclouds.dev/community/zsh_plugin_standard#zero-handling
+0="${ZERO:-${${0:#$ZSH_ARGZERO}:-${(%):-%N}}}"
+0="${${(M)0:#/*}:-$PWD/$0}"
 
 typeset -gx ZUID_LOCKS_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh-unique-id"
 
