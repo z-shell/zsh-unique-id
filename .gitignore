@@ -91,7 +91,7 @@ tags
 .zcalc_history
 
 # A popular plugin manager's files
-*.flock
+myflock
 ._zi
 ._zinit
 ._zplugin
