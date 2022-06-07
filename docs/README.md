@@ -1,32 +1,22 @@
-<h1 align="center">
-  <a href="https://github.com/z-shell/zi">
-    <img src="https://github.com/z-shell/zi/raw/main/docs/images/logo.svg" alt="Logo" width="80" height="80" />
-  </a>
-❮ ZI ❯ Plugin - Zsh Unique ID
-</h1>
+<div align="center"><table><tr><td align="center">
+<h1><a href="https://github.com/z-shell/zi">
+<img align="center" src="https://github.com/z-shell/zi/raw/main/docs/images/logo.svg" alt="zsh plugin zsh-unique-id" width="80" height="80" />
+</a> ❮ ZI ❯ Plugin - Zsh Unique ID </h1>
+<h2>
 
-- [Introduction](#introduction)
-- [Installation](#installation)
-  - [ZI](#zi)
-  - [Antigen](#antigen)
-  - [Oh-My-Zsh](#oh-my-zsh)
-  - [Zgen](#zgen)
+Note: this project is a derivative of [z-shell/zconvey](https://github.com/z-shell/zconvey)
 
-# Introduction
+</h2>
 
-> Note: this project is a derivative of [z-shell/zconvey](https://github.com/z-shell/zconvey)
+<!--  <a align="center" href="https://asciinema.org/a/208206" target="_blank"><img src="https://asciinema.org/a/156726.svg" /></a><b>You can resize the video by pressing <kbd>Ctrl-+</kbd> or <kbd>Cmd-+</kbd></b> -->
 
-This plugin provides a **unique number** that identifies a **running**
-Zshell session, in its shell variable `$ZUID_ID`. Besides this unique number,
-also a unique _codename_ is provided, in shell variable `$ZUID_CODENAME`. Once
-you load this plugin, the two parameters will be set, and their values will not
-be available to other Zshell sessions (being thus _unique_).
+</td></tr></table></div>
 
-`$ZUID_ID` is a progressing number starting from `1`. `$ZUID_CODENAME` is chosen
-from a list of predefined codenames, see the default list below.
+This plugin provides a **unique number** that identifies a **running** Zshell session, in its shell variable `$ZUID_ID`. Besides this unique number, also a unique _codename_ is provided, in shell variable `$ZUID_CODENAME`. Once you load this plugin, the two parameters will be set, and their values will not be available to other Zshell sessions (being thus _unique_).
 
-An example use case is to hold logs in files `.../mylog-${ZUID_CODENAME}.log`, so
-that two different Zshells will not write to the same file at the same time.
+`$ZUID_ID` is a progressing number starting from `1`. `$ZUID_CODENAME` is chosen from a list of predefined codenames, see the default list below.
+
+An example use case is to hold logs in files `.../mylog-${ZUID_CODENAME}.log`, so that two different Zshells will not write to the same file at the same time.
 
 Default codenames are:
 
@@ -60,23 +50,21 @@ Default codenames are:
 
 Zstyle configuration allows to customize the codenames:
 
-```zsh
+```shell
 zstyle :plugin:zuid codenames paper metal wood plastic # first 4 shells will have those codenames
 ```
 
 # Installation
 
-**The plugin is "standalone"**, which means that only sourcing it is needed (without
-using a plugin manager). So to install, unpack `zsh-unique-id` somewhere and add:
+**The plugin is "standalone"**, which means that only sourcing it is needed (without using a plugin manager). So to install, unpack `zsh-unique-id` somewhere and add:
 
-```zsh
+```shell
 source {where-zsh-unique-id-is}/zsh-unique-id.plugin.zsh
 ```
 
 to `zshrc`.
 
-Sourcing is recommended, because it can be done early, at top of zshrc, without a
-plugin manager – to acquire the unique identification as early as possible.
+Sourcing is recommended, because it can be done early, at top of zshrc, without a plugin manager – to acquire the unique identification as early as possible.
 
 ## [ZI](https://github.com/z-shell/zi)
 

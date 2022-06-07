@@ -1,3 +1,54 @@
+# VSCODE workspace
+.vscode/*
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+*.code-workspace
+
+# Trunk
+.trunk/out
+
+# Exclude for security reasons
+.history/
+.dccache
+.env
+
+# Zsh compiled script + zrecompile backup
+*.zwc
+*.zwc.old
+
+# Zsh completion-optimization dumpfile
+*zcompdump*
+
+# Zsh zcalc history
+.zcalc_history
+
+# A popular plugin manager's files
+._zi
+._zinit
+._zplugin
+.zi_lastupd
+.zinit_lastupd
+.zplugin_lstupd
+
+# z-shell/zshelldoc tool's files
+zsdoc/data
+docs/zsdoc/data
+
+# ohmyzsh/ohmyzsh/plugins/per-directory-history plugin's files
+# (when set-up to store the history in the local directory)
+.directory_history
+
+# MichaelAquilina/zsh-autoswitch-virtualenv plugin's files
+# (for Zsh plugins using Python)
+.venv
+
+# Zunit tests' output
+/tests/_output/*
+!/tests/_output/.gitkeep
+
+### C
 # Prerequisites
 *.d
 
@@ -51,54 +102,30 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-### Vim
-# Swap
-[._]*.s[a-v][a-z]
-[._]*.sw[a-p]
-[._]s[a-v][a-z]
-[._]sw[a-p]
-
-# Session
-Session.vim
-
-# Temporary
-.netrwhist
-*~
-# Auto-generated tag files
-tags
-
-# VSCODE workspace
-.vscode/*
-.vscode/settings.json
-.vscode/tasks.json
-.vscode/launch.json
-.vscode/extensions.json
-*.code-workspace
-
-# Exclude for security reasons
-.history/
-.dccache
-.env
-
-# Zsh compiled script + zrecompile backup
+# Repository specific files
+test/
+txt/
+*.txt
 *.zwc
-*.zwc.old
+*.zini
+*lib/zsh/*zwc
+.ycm_extra_conf.py
+*deploy*key*
+*.bundle
+site*/
+other
+TODO*
+tags
+TAGS
+*.o
+*.o.c
+*.orig
+*.a
+*.so
+*.dll
+*~
+.*.sw?
+\#*
 
-# Zsh completion-optimization dumpfile
-*zcompdump*
-
-# Zsh zcalc history
-.zcalc_history
-
-# A popular plugin manager's files
-myflock
-._zi
-._zinit
-._zplugin
-.zi_lastupd
-.zinit_lastupd
-.zplugin_lstupd
-
-# z-shell/zshelldoc tool's files
-zsdoc/data
-docs/zsdoc/data
+CVS
+.#
