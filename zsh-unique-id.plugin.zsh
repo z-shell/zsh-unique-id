@@ -2,16 +2,8 @@
 #
 # Standardized $0 Handling
 # https://z.digitalclouds.dev/community/zsh_plugin_standard#zero-handling
-echo "DEBUG: Before ZERO processing"
-echo "DEBUG: %N expansion: ${(%):-%N}"
-echo "DEBUG: 0 parameter: $0"
-echo "DEBUG: ZERO: $ZERO"
-echo "DEBUG: ZSH_ARGZERO: $ZSH_ARGZERO"
 0="${ZERO:-${${0:#$ZSH_ARGZERO}:-${(%):-%N}}}"
-echo "DEBUG: After step 1 - 0 = $0"
 0="${${(M)0:#/*}:-$PWD/$0}"
-echo "DEBUG: After step 2 - 0 = $0"
-echo "DEBUG: Directory part: ${0:h}"
 
 typeset -gx ZUID_LOCKS_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh-unique-id"
 
@@ -27,17 +19,14 @@ typeset -gx ZUID_CODENAME
 # Binary flock command that supports 0 second timeout (zsystem's
 # flock in Zsh ver. < 5.3 doesn't) - util-linux/flock stripped
 # of some things, compiles hopefully everywhere (tested on OS X, Linux, FreeBSD).
-if [[ ! -e "${ZERO:h}/myflock/flock" && ! -e "${ZERO:h}/myflock/flock".exe   ]]; then (
+if [[ ! -e "${0:h}/myflock/flock" && ! -e "${0:h}/myflock/flock".exe   ]]; then (
   if zmodload zsh/system 2>/dev/null; then
-    echo "DEBUG: About to call zsystem flock with: '${ZERO:h}/myflock/LICENSE'"
-    echo "DEBUG: Full path expands to: '${ZERO:h}/myflock/LICENSE'"
-    echo "DEBUG: File exists: $(test -f "${ZERO:h}/myflock/LICENSE" && echo YES || echo NO)"
-    if zsystem flock -t 1 "${ZERO:h}/myflock/LICENSE"; then
+    if zsystem flock -t 1 "${0:h}/myflock/LICENSE"; then
       echo "\033[1;35m""z-shell\033[0m/\033[1;33m""zsh-unique-id\033[0m is building small locking command for you..."
-      make -C "${ZERO:h}/myflock"
+      make -C "${0:h}/myflock"
     fi
   else
-    make -C "${ZERO:h}/myflock"
+    make -C "${0:h}/myflock"
   fi
   )
 fi
@@ -121,7 +110,7 @@ fi
       res="$?"
     else
       exec {ZUID_FD}>"$lockfile"
-      "${ZERO:h}/myflock/flock" -nx "$ZUID_FD"
+      "${0:h}/myflock/flock" -nx "$ZUID_FD"
       res="$?"
     fi
 
