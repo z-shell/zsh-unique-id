@@ -103,6 +103,7 @@ Mkfile.old
 dkms.conf
 
 # Repository specific files
+myflock/flock
 test/
 txt/
 *.txt
